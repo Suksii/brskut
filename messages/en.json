@@ -1,1 +1,10 @@
-{}
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "recipes": "Recipes & Gastronomy",
+    "news": "News",
+    "contact": "Contact"
+  }
+}
