@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <div className="h-screen w-full bg-tertiary">
+    <div className="h-screen w-full bg-neutral-500">
       <div className="flex justify-center items-center w-full h-full">
         <Image src="/logo_hero.png" alt="Brskut Logo" width={200} height={400}/>
       </div>

@@ -6,5 +6,25 @@
     "recipes": "Recipes & Gastronomy",
     "news": "News",
     "contact": "Contact"
+  },
+  "contact": {
+    "description1": "For inquiries regarding wholesale, distribution, listing products in retail chains, as well as cooperation with hotels, restaurants and hospitality establishments, please contact us via the form below.",
+    "description2": "Our sales team will get back to you as soon as possible with relevant information.",
+    "emailLabel": "Email:",
+    "email": "office@brskut.me",
+    "phoneLabel": "Contact phone:",
+    "phone": "+382 67 836 248",
+    "companyName": "Brskut d.o.o.",
+    "address1": "Ulica artiljerijskog oficira",
+    "address2": "Radonje Veljevog Garica,",
+    "address3": "Podgorica",
+    "pib": "123456",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "formTitle": "Title",
+    "formEmail": "Email address",
+    "formName": "Full name or company name",
+    "formSubmit": "Send"
   }
 }
