@@ -26,5 +26,13 @@
     "formEmail": "Email address",
     "formName": "Full name or company name",
     "formSubmit": "Send"
+  },
+  "news": {
+    "brand": "BRSKUT",
+    "title": "LATEST NEWS",
+    "readMore": "Read more",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page"
   }
 }
