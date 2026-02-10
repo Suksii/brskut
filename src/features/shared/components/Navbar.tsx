@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 import { Link, usePathname, useRouter } from "@/src/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import Logo from "./Logo";
 import { motion, AnimatePresence } from "framer-motion";
 import { routing } from "@/src/i18n/routing";
+import Image from "next/image";
 
 type Pathname = (typeof routing.pathnames)[keyof typeof routing.pathnames];
 
-const Navigation = () => {
+const Navbar = () => {
   const t = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
@@ -41,7 +41,6 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -73,7 +72,6 @@ const Navigation = () => {
     open: { rotate: -45, y: -8 },
   };
 
-  // Mobile menu variants
   const menuVariants = {
     closed: {
       x: "100%",
@@ -107,7 +105,6 @@ const Navigation = () => {
     }),
   };
 
-  // Nav item hover animation
   const navItemVariants = {
     initial: { y: 0 },
     hover: { y: -2 },
@@ -124,14 +121,22 @@ const Navigation = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-34">
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Logo />
+              <Link href={{ pathname: "/" }} className="shrink-0">
+                <Image
+                  src={"/logo_header.png"}
+                  alt="Brskut logo"
+                  width={60}
+                  height={200}
+                  className="w-auto h-30"
+                />
+              </Link>
             </motion.div>
 
             {/* Desktop Navigation Items */}
@@ -150,17 +155,13 @@ const Navigation = () => {
                   >
                     <Link
                       href={item.href}
-                      className={`relative text-sm font-medium transition-all duration-200 ${
-                        isScrolled ? "text-gray-800" : "text-white"
-                      } ${isActive ? "font-bold" : ""}`}
+                      className={`relative text-sm font-medium transition-all duration-200 text-gray-800 ${isActive ? "font-bold" : ""}`}
                     >
                       {item.name}
                       {isActive && (
                         <motion.div
                           layoutId="activeIndicator"
-                          className={`absolute -bottom-1 left-0 right-0 h-0.5 ${
-                            isScrolled ? "bg-gray-800" : "bg-white"
-                          }`}
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-800"
                           transition={{
                             type: "spring",
                             stiffness: 380,
@@ -206,12 +207,8 @@ const Navigation = () => {
                     onClick={() => switchLanguage(loc.code)}
                     className={`relative z-10 w-10 h-7 text-xs font-semibold rounded-full transition-colors duration-200 cursor-pointer ${
                       locale === loc.code
-                        ? isScrolled
-                          ? "text-gray-900"
-                          : "text-white"
-                        : isScrolled
-                          ? "text-gray-500 hover:text-gray-700"
-                          : "text-white/70 hover:text-white"
+                        ? "text-gray-900"
+                        : "text-gray-500 hover:text-gray-700"
                     }`}
                   >
                     {loc.label}
@@ -378,4 +375,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navbar;
