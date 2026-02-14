@@ -36,13 +36,13 @@ export default function FeaturedSection({ items }: FeaturedSectionProps) {
           <h3 className="text-2xl lg:text-3xl font-light mb-6">
             {currentItem.title}
           </h3>
-          <div className="w-16 mx-auto h-0.5 bg-secondary mb-6" />
+          <div className="w-24 mx-auto h-0.5 bg-secondary mb-6" />
           <h4 className="font-bold mb-4">{currentItem.subtitle}</h4>
           <p className="text-sm leading-relaxed mb-8 text-center">
             {currentItem.description}
           </p>
           <div>
-            <button className="px-8 py-3 border text-sm font-medium hover:bg-white rounded-xl transition-colors cursor-pointer">
+            <button className="px-8 py-3 text-sm font-medium bg-primary hover:bg-white rounded-xl transition-colors cursor-pointer">
               Сазнај више
             </button>
           </div>
